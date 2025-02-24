@@ -68,7 +68,7 @@
 .resume-container{
     text-align: center;
     font-size: 12px;
-    margin: 6px 0;
+    margin-bottom: 6px;
     display: inline-block;
     align-items: end;
 }
