@@ -203,6 +203,14 @@
     .description {
       font-size: 0.8rem;
     }
+
+    .project-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem; 
+    }
   }
   
   /* Adjustments for 390px */
@@ -241,4 +249,13 @@
     .description {
       font-size: 0.7rem;
     }
+
+    .project-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem; 
+    }
+
   }
