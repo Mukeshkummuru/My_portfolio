@@ -1,0 +1,244 @@
+/* Mobile Layout (up to 430px) */
+@media (max-width: 430px) {
+    body {
+      font-size: 14px;
+    }
+  
+    .app-container {
+      flex-direction: column; /* Stack content vertically */
+      height: auto;
+    }
+  
+    .content-container {
+      width: 100%; /* Full width for mobile */
+      padding: 1rem;
+      overflow-y: visible;  
+      height: auto;
+      order: 2;  
+    }
+  
+    section {
+      padding: 2rem 1rem; /* Add consistent padding */
+      min-height: auto; /* Remove fixed height */
+    }
+  
+    /* Home Section */
+    .home-section {
+      position: static; /* Remove fixed positioning */
+      width: 100%; /* Full width for mobile */
+      height: auto;
+      padding: 2rem 1rem; /* Add consistent padding */
+      margin-top: -11%;
+      text-align: center; /* Center align content */
+      order: 1; /* Ensure home section is at the top */
+    }
+  
+    .home-content {
+      max-width: 100%; /* Full width for mobile */
+      text-align: center; /* Center align text */
+    }
+  
+    .profile-image {
+      width: 200px; /* Smaller image for mobile */
+      height: 200px;
+      margin-bottom: 0.8rem; /* Add spacing below image */
+    }
+  
+    .title {
+      font-size: 2rem; /* Smaller font size for mobile */
+      margin-bottom: 0.5rem; /* Add spacing below title */
+    }
+  
+    .subtitle {
+      font-size: 0.9rem;
+      margin-right: 0;  
+      margin-bottom: 1px; 
+      margin-top: -5px;
+      text-transform: uppercase;
+    }
+  
+    .role {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;  
+      margin-top: 0.5rem;  
+    }
+  
+    .description {
+      font-size: 0.9rem;
+      margin-bottom: 1rem; /* Add spacing below description */
+    }
+  
+    /* Navigation */
+    .navigation {
+      padding: 0.5rem 1rem; /* Reduce padding for mobile */
+      position: sticky; /* Make navigation sticky */
+      top: 0;
+      background: #0a192f; /* Ensure background is visible */
+      z-index: 1000;
+    }
+  
+    .navigation ul {
+      gap: 1rem; /* Reduce gap between nav items */
+      justify-content: center; /* Center align nav items */
+    }
+  
+    .nav-link {
+      font-size: 0.9rem; /* Smaller font size for mobile */
+      padding: 0.3rem 0.5rem; /* Reduce padding for mobile */
+    }
+  
+    /* Projects Section */
+    .projects-section {
+      padding: 2rem 1rem; /* Add consistent padding */
+    }
+  
+    .section-title {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+      margin-bottom: 1rem; /* Add spacing below title */
+    }
+  
+    .project-card {
+      max-width: 100%; /* Full width for mobile */
+      padding: 1.5rem; /* Add consistent padding */
+      margin-bottom: 1.5rem; /* Add spacing between cards */
+    }
+  
+    .project-name {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem; /* Add spacing below name */
+    }
+  
+    .project-stack,
+    .project-tools {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem; /* Add spacing below stack/tools */
+    }
+  
+    .project-link {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      margin: 1rem 1rem;  
+    }
+  
+    /* Experience Section */
+    .experience-section {
+      padding: 2rem 1rem; /* Add consistent padding */
+    }
+  
+    .experience-card {
+      padding: 1.5rem; /* Add consistent padding */
+      margin-bottom: 1.5rem; /* Add spacing between cards */
+    }
+  
+    .exp-section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem; /* Add spacing below title */
+    }
+  
+    /* About Section */
+    .about-section {
+      padding: 2rem 1rem; /* Add consistent padding */
+    }
+  
+    .abt-section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem; /* Add spacing below title */
+    }
+  
+    /* Skills Section */
+    .skills-section {
+      padding: 2rem 1rem; /* Add consistent padding */
+    }
+  
+    .skills-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for mobile */
+      gap: 1rem; /* Add spacing between grid items */
+    }
+  
+    .skill-box {
+      padding: 1.5rem; /* Add consistent padding */
+      margin-bottom: 1rem; /* Add spacing between boxes */
+    }
+  
+    .skill-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem; /* Add spacing below title */
+    }
+  
+    /* Certificate Section */
+    .certificate-container {
+      margin-top: 1rem; /* Add spacing above container */
+    }
+  
+    .certificate-viewer {
+       display: none;
+    }
+  
+    .download-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      margin-top: 0.5rem; /* Add spacing above button */
+    }
+
+    .resume-container{
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+  }
+  
+  /* Adjustments for 414px */
+  @media (max-width: 414px) {
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .subtitle {
+      font-size: 0.9rem;
+    }
+  
+    .role {
+      font-size: 1.1rem;
+    }
+  
+    .description {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Adjustments for 390px */
+  @media (max-width: 390px) {
+    .title {
+      font-size: 1.7rem;
+    }
+  
+    .subtitle {
+      font-size: 0.85rem;
+    }
+  
+    .role {
+      font-size: 1rem;
+    }
+  
+    .description {
+      font-size: 0.75rem;
+    }
+  }
+  
+  /* Adjustments for 375px */
+  @media (max-width: 375px) {
+    .title {
+      font-size: 1.6rem;
+    }
+  
+    .subtitle {
+      font-size: 0.8rem;
+    }
+  
+    .role {
+      font-size: 0.95rem;
+    }
+  
+    .description {
+      font-size: 0.7rem;
+    }
+  }
