@@ -46,7 +46,7 @@
   
     .title {
       font-size: 2rem; /* Smaller font size for mobile */
-      margin-bottom: 0.5rem; /* Add spacing below title */
+      margin-bottom: 0.6rem; /* Add spacing below title */
     }
   
     .subtitle {
@@ -60,7 +60,7 @@
     .role {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;  
-      margin-top: 0.5rem;  
+      margin-top: 0.1rem;  
     }
   
     .description {
