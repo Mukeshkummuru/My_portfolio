@@ -81,7 +81,72 @@ const Projects = () => {
           </div>
         </div>
       )}
-    </section>
+
+      {/* Backend Takehome Project */}
+<div className="project-card" onClick={() => toggleDetails('backend')}>
+  <h3 className="project-name">Research Papers Fetcher</h3>
+  <p className="project-stack">Technologies: Python, PubMedAPI, Poetry</p>
+  <p className="project-tools">Skills: API Development, Data Processing</p>
+  <a href="https://github.com/Mukeshkummuru/Research_fetcher" target="_blank" rel="noopener noreferrer" className="project-link-git">
+          View on GitHub
+        </a>
+</div>
+
+{activeProject === 'backend' && (
+  <div className="project-details">
+    <h3>Project Overview</h3>
+    <p>
+      This command-line tool fetches research papers from **PubMed**, filters them based on author affiliations, 
+      and saves the results as a **CSV file**. The program identifies papers where at least 
+      one author is affiliated with a **pharmaceutical or biotech company**.
+    </p>
+    <br />
+    <p>**Key Features:**</p>
+    <ul>
+      <li>Uses the PubMed API to retrieve research papers.</li>
+      <li>Filters authors affiliated with non-academic institutions.</li>
+      <li>Command-line tool with options for query, debug mode, and CSV output.</li>
+      <li>Built using Python and Poetry for dependency management.</li>
+    </ul>
+    <br />
+    <p>
+      The entire project is packaged and published on **Test PyPI**. 
+      You can install and run it using:
+    </p>
+    <div className="code-block">
+      <pre>
+        <code>
+          pip install --index-url https://test.pypi.org/simple/ <br />
+          --extra-index-url https://pypi.org/simple/ <br />
+          backend-takehome --no-cache-dir --force-reinstall
+        </code>
+      </pre>
+    </div>
+    <br/>
+    
+  <p>connect to script CLI cmd</p>
+  <div className="code-block">
+    <pre>
+      <code>
+        Set-Content -Path ".venv/Scripts/get-papers-list.bat" -Value '@python "%~dp0..<br/>\Lib\site-packages\backend_takehome\cli.py" %*'
+      </code>
+    </pre>
+  </div>
+
+  <br />
+    <p>
+      Get the output saving as CSV file
+    </p>
+    <div className="code-block">
+      <pre>
+        <code>
+           get-papers-list "cancer research" -f output.csv
+        </code>
+      </pre>
+    </div>
+  </div>
+)}
+</section>
   );
 };
 

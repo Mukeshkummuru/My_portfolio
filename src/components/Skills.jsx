@@ -50,6 +50,14 @@ const Skills = () => {
             <li>QGIS & Geospatial Analysis</li>
           </ul>
         </div>
+
+        <div className="skill-box">
+          <h3>Programming</h3>
+          <ul>
+            <li>Python</li>
+            <li>DSA(Basics)</li>
+          </ul>
+        </div>
       </div>
     </section>
   );

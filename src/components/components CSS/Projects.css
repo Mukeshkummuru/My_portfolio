@@ -81,5 +81,28 @@
     transition: transform 0.3s ease-in-out;
 }
 
+.code-block {
+    max-width: 100%;
+    overflow-x: auto;
+    background-color: #f4f4f448;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  
+  .project-link-git{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #64ffda;
+    color: #0a192f;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
  
