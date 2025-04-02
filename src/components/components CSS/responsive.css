@@ -114,10 +114,17 @@
       margin-bottom: 0.5rem; /* Add spacing below stack/tools */
     }
   
+    .project-links-container {
+      gap: 25px; /* Reduce gap for small screens */
+    }
+  
     .project-link {
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-      margin: 1rem 1rem;  
+      padding: 8px 12px;  
+      font-size: 14px; /* Reduce font size */
+    }
+
+    .project-link-source{
+      padding: 8px 12px;  
     }
   
     /* Experience Section */
@@ -204,13 +211,6 @@
       font-size: 0.8rem;
     }
 
-    .project-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.9rem; 
-    }
   }
   
   /* Adjustments for 390px */
@@ -248,14 +248,6 @@
   
     .description {
       font-size: 0.7rem;
-    }
-
-    .project-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.9rem; 
     }
 
   }
