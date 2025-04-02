@@ -107,3 +107,34 @@
 .download-btn:hover {
     background: #52d1b2;
 }
+
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: -8px;
+  }
+  
+  .social-links a {
+    transition: transform 0.3s ease;
+  }
+  
+ 
+.linkedin {
+    color: #0077b5;  
+  }
+  
+  .linkedin:hover {
+    color: #005682;
+    transform: scale(1.2);
+  }
+  
+  /* GitHub Icon */
+.github {
+    color: #ccd6f6; 
+  }
+  
+  .github:hover {
+    color: #333;
+    transform: scale(1.2);
+  }

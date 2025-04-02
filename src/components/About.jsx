@@ -1,5 +1,6 @@
 import React from 'react';
 import './components CSS/Experience.css';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const About = () => {
   return (
@@ -10,6 +11,16 @@ const About = () => {
         Passionate about learning, I focus on **full-stack development, frontend development, machine learning, and data analytics**.
         Currently, I had Developed a fully functional and dynamic highly responsive eCommerce website,have a look on it in my projects sections.
       </p>
+
+      <h3>Connect with Me</h3>
+      <div className="social-links">
+        <a href="https://www.linkedin.com/in/mukesh-kummuru-b25b6429b/" target="_blank" rel="noopener noreferrer" className="linkedin">
+          <FaLinkedin size={35} />
+        </a>
+        <a href="https://github.com/Mukeshkummuru" target="_blank" rel="noopener noreferrer" className="github">
+          <FaGithub size={35} />
+        </a>
+      </div>
 
       <h3>Education</h3>
       <ul>
@@ -25,6 +36,7 @@ const About = () => {
         <li>Full stack development</li>
         <li>Front end development</li>
       </ul>
+
     </section>
   );
 };

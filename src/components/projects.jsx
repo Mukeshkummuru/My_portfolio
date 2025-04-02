@@ -20,11 +20,16 @@ const Projects = () => {
         <h3 className="project-name">GANGS - E-commerce Website</h3>
         <p className="project-stack">Built with MERN Stack</p>
         <p className="project-tools">Tools: React.js, Node.js, Express.js, MongoDB</p>
-        <a href="https://gangsclothingbrand.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">
-          Visit Website
-        </a>
-        <a href="https://gangs-backend.onrender.com/" target="_blank" rel="noopener noreferrer" className="project-link">
-          Use my api
+        <div className="project-links-container">
+          <a href="https://gangsclothingbrand.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">
+            Visit Website
+          </a>
+          <a href="https://gangs-backend.onrender.com/" target="_blank" rel="noopener noreferrer" className="project-link">
+            Use my API
+          </a>
+        </div>
+        <a href="https://github.com/Mukeshkummuru/Gangs-Brand-clothing" target="_blank" rel="noopener noreferrer" className="project-link-source">
+          Source Code
         </a>
       </div>
 
