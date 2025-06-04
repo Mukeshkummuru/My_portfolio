@@ -13,6 +13,8 @@ const Skills = () => {
             <li>React.js</li>
             <li>HTML & CSS</li>
             <li>JavaScript</li>
+            <li>Flutter</li>
+            <li>Dart</li>
           </ul>
         </div>
 
@@ -21,7 +23,8 @@ const Skills = () => {
           <ul>
             <li>Node.js</li>
             <li>Express.js</li>
-            <li>REST API Development</li>
+            <li>REST Api Development</li>
+            <li>FAST Api</li>
           </ul>
         </div>
 
@@ -30,6 +33,7 @@ const Skills = () => {
           <ul>
             <li>MongoDB</li>
             <li>SQL</li>
+            <li>Firebase</li>
           </ul>
         </div>
 

@@ -62,7 +62,7 @@
     margin: 15px auto;
     margin-bottom: 0;
     padding: 12px 0;
-    width: 75%;
+    width: 80%;
     background: #64ffda;
     color: #0a192f;
     font-weight: bold;
@@ -125,4 +125,16 @@
     align-items: center;
 }
 
- 
+.apk{
+    display: block;
+    margin: 15px auto;
+    margin-bottom: 0;
+    padding: 12px 0;
+    width: 70%;
+    background: #64ffda;
+    color: #0a192f;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}

@@ -101,3 +101,41 @@
     transform: translateY(1px);
     box-shadow: 0px 3px 8px rgba(100, 255, 218, 0.2);
 }
+
+.mobile-mockup-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #888 transparent;
+  max-height: 1100px; /* or whatever height fits your layout */
+  overflow-y: auto;
+}
+
+.mobile-mockup-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.mobile-mockup-wrapper::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+.mobile-mockup-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-mockup-image {
+  width: 240px;
+  height: auto;
+  border-radius: 30px;
+  border: 2px solid #ff9f1c;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(255, 165, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.mobile-mockup-image:hover {
+  transform: scale(1.03);
+}
