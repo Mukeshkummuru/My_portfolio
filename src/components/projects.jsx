@@ -114,13 +114,12 @@ const Projects = () => {
         <p className="project-stack">Built with Flutter & FastAPI</p>
         <p className="project-tools">Tools:  Flutter, Dart, FastAPI, Python, MongoDB, Firebase, WebSockets</p>
         <a
-          href="https://chat-app-e11a5.web.app"
+          href="https://chat-app-e11a5.web.app/download/"
           target="_blank"
           rel="noopener noreferrer"
           className="apk"
         >
-          <span className="material-icons" style={{ marginRight: '8px', verticalAlign: 'middle' }}>android</span>
-          Download APK
+          Click Here to view
         </a>
       </div>
 
