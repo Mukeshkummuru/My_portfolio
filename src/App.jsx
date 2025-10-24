@@ -5,7 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/projects';
 import Skills from './components/Skills';
-import Experience from './components/Experience'; 
+import Experience from './components/Experience';
 import './index.css';
 import '../src/components/components CSS/responsive.css';
 

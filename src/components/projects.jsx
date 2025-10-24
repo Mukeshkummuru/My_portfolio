@@ -9,7 +9,7 @@ import image3 from '../assets/images/image3.jpg';
 import image4 from '../assets/images/image4.jpg';
 import image5 from '../assets/images/image5.jpg';
 import image6 from '../assets/images/image6.jpg';
- 
+
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null);
@@ -24,7 +24,7 @@ const Projects = () => {
         detail: {
           type: 'chitchat',
           images: [
-           image1, image2, image3, image4, image5, image6
+            image1, image2, image3, image4, image5, image6
           ]
         }
       }));
@@ -60,14 +60,14 @@ const Projects = () => {
         <div className="project-details">
           <h3>How I Built GANGS</h3>
           <p>
-            GANGS is a fully functional eCommerce platform built using the MERN stack. 
-            The frontend is developed with React.js, featuring a component-based architecture 
-            for a seamless user experience. The backend, powered by Express.js and Node.js, 
+            GANGS is a fully functional eCommerce platform built using the MERN stack.
+            The frontend is developed with React.js, featuring a component-based architecture
+            for a seamless user experience. The backend, powered by Express.js and Node.js,
             handles authentication, product management, and order processing efficiently.
           </p>
           <br />
           <p>
-            The database is managed using MongoDB, ensuring scalability and fast data retrieval. 
+            The database is managed using MongoDB, ensuring scalability and fast data retrieval.
             The website is hosted on Vercel for the frontend and Render for the backend.
           </p>
           <br />
@@ -88,8 +88,8 @@ const Projects = () => {
         <div className="project-details">
           <h3>Project Overview</h3>
           <p>
-            Developed and optimized a <strong>spatio-temporal gap-filling algorithm</strong> for large-scale satellite-based 
-            actual evapotranspiration (ET) data. The project involved processing high-resolution TIFF files, 
+            Developed and optimized a <strong>spatio-temporal gap-filling algorithm</strong> for large-scale satellite-based
+            actual evapotranspiration (ET) data. The project involved processing high-resolution TIFF files,
             handling data from Bhuvan, and utilizing advanced visualization techniques in QGIS and Matplotlib.
           </p>
           <p><strong>Key Features:</strong></p>
@@ -126,7 +126,7 @@ const Projects = () => {
       {activeProject === 'chitchat' && (
         <div className="project-details">
           <p>
-            Role:  Mobile App Developer  
+            Role:  Mobile App Developer
             <p>Developed a full-stack real-time chat app with modern UI/UX using Flutter frontend and FastAPI backend.</p>
             <p>Implemented JWT-based secure authentication with OTP verification and password hashing.</p>
             <p>Built REST APIs for user profiles, friend requests, chat history, and presence tracking.</p>
@@ -136,6 +136,46 @@ const Projects = () => {
           </p>
         </div>
       )}
+
+      <div className="project-card" onClick={() => toggleDetails('moneyLedger')}>
+        <h3 className="project-name">Money Ledger - Personal Finance Tracker</h3>
+        <p className="project-stack">Built with Django & React.js</p>
+        <p className="project-tools">Tools: Django, Django REST Framework, React.js, MySQL Workbench, Axios</p>
+        <a href="https://github.com/Mukeshkummuru/moneyledger_django_project" target="_blank" rel="noopener noreferrer" className="project-link-source">
+          Source Code
+        </a>
+      </div>
+
+      {activeProject === 'moneyLedger' && (
+        <div className="project-details">
+          <h3>How I Built Money Ledger</h3>
+          <p>
+            Money Ledger is a personal finance tracking application designed to manage money transactions efficiently.
+            I built the backend using Django and Django REST Framework, which provides a robust and scalable API for CRUD operations.
+            MySQL Workbench was used as the database to store transaction details, user information, and financial summaries.
+          </p>
+          <br />
+          <p>
+            The frontend is developed using React.js, offering a clean and interactive interface.
+            Users can add transactions (given or taken), view detailed lists, and see aggregated summaries like total given or received.
+            Axios is used for seamless communication between the React frontend and Django backend APIs.
+          </p>
+          <br />
+          <p>
+            The development process included designing the database schema, creating Django models and serializers,
+            implementing API endpoints with proper validations, and connecting themhe  to tReact frontend.
+            I implemented features like dynamic transaction addition, viewing historical transactions, and calculating totals.
+            Throughout the project, I focused on modular code structure, clean UI, and scalability for future enhancements.
+          </p>
+          <br />
+          <p>
+            Currently, I am working on this project as part of my training at <strong>Priacc Innovations</strong>
+            in my role as an Associate Software Engineer, gaining hands-on experience in full-stack development
+            and integrating frontend, backend, and database efficiently.
+          </p>
+        </div>
+      )}
+
     </section>
   );
 };

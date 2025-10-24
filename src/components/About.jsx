@@ -5,12 +5,14 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 const About = () => {
   return (
     <section className="about-section">
-      <h2  className="abt-section-title" >About Me</h2>
+      <h2 className="abt-section-title" >About Me</h2>
       <p>
-        Hello Developers, my name is Mukesh and I am a recent Gradute **fresher seeking opportunities** in **data science and software development**. 
-        Passionate about learning, I focus on **full-stack development, frontend development, machine learning, and data analytics**.
-        Currently, I had Developed a fully functional and dynamic highly responsive eCommerce website,have a look on it in my projects sections.
+        Hello Developers, I'm Mukesh — currently working as an Associate Software Engineer at <strong style={{ color: "red" }}>Priacc Innovations pvt lmt</strong> during my training period.
+        I’ve strengthened my skills in <strong>Python</strong>, frameworks like <strong>Django</strong>, and GUI tools such as <strong>Tkinter</strong>, completing several hands-on projects.
+        I’m passionate about <strong>full-stack development, frontend engineering</strong>.
+        Previously, I developed a fully functional, dynamic, and highly responsive <strong>eCommerce website</strong> — you can check it out in my <strong>Projects</strong> section.
       </p>
+
 
       <h3>Connect with Me</h3>
       <div className="social-links">

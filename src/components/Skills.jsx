@@ -25,6 +25,7 @@ const Skills = () => {
             <li>Express.js</li>
             <li>REST Api Development</li>
             <li>FAST Api</li>
+            <li>Django</li>
           </ul>
         </div>
 

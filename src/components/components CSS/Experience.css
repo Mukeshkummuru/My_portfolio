@@ -1,3 +1,7 @@
+strong {
+    color: rgb(228, 224, 224);
+}
+
 .experience-section {
     padding: 3rem;
 }
@@ -22,7 +26,7 @@
     margin-bottom: 1rem;
 }
 
-.abt-section-title{
+.abt-section-title {
     font-size: 2rem;
     color: #ccd6f6;
 }
@@ -77,7 +81,7 @@
     margin-bottom: 0.5rem;
 }
 
- 
+
 /* certificate css */
 .certificate-container {
     margin-top: 1rem;
@@ -113,28 +117,28 @@
     display: flex;
     gap: 15px;
     margin-bottom: -8px;
-  }
-  
-  .social-links a {
+}
+
+.social-links a {
     transition: transform 0.3s ease;
-  }
-  
- 
+}
+
+
 .linkedin {
-    color: #0077b5;  
-  }
-  
-  .linkedin:hover {
+    color: #0077b5;
+}
+
+.linkedin:hover {
     color: #005682;
     transform: scale(1.2);
-  }
-  
-  /* GitHub Icon */
+}
+
+/* GitHub Icon */
 .github {
-    color: #ccd6f6; 
-  }
-  
-  .github:hover {
+    color: #ccd6f6;
+}
+
+.github:hover {
     color: #333;
     transform: scale(1.2);
-  }
+}

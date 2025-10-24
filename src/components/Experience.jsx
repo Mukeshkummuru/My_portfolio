@@ -55,7 +55,7 @@ const Experience = () => {
         <h3>Full-Stack Web Development Internship</h3>
         <p><strong>Institute:</strong> International Institute of Digital Technologies</p>
         <p>
-          Gained expertise in full-stack web development, working with modern technologies to build 
+          Gained expertise in full-stack web development, working with modern technologies to build
           responsive and scalable applications.
         </p>
 
