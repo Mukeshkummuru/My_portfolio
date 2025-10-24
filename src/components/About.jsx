@@ -7,7 +7,7 @@ const About = () => {
     <section className="about-section">
       <h2 className="abt-section-title" >About Me</h2>
       <p>
-        Hello Developers, I'm Mukesh — currently working as an Associate Software Engineer at <strong style={{ color: "red" }}>Priacc Innovations pvt lmt</strong> during my training period.
+        Hello Developers, I'm Mukesh — currently working as an Associate Software Engineer at <strong style={{ color: "orange" }}>Priacc Innovations pvt lmt</strong> during my training period.
         I’ve strengthened my skills in <strong>Python</strong>, frameworks like <strong>Django</strong>, and GUI tools such as <strong>Tkinter</strong>, completing several hands-on projects.
         I’m passionate about <strong>full-stack development, frontend engineering</strong>.
         Previously, I developed a fully functional, dynamic, and highly responsive <strong>eCommerce website</strong> — you can check it out in my <strong>Projects</strong> section.
