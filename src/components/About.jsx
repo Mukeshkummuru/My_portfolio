@@ -7,8 +7,9 @@ const About = () => {
     <section className="about-section">
       <h2 className="abt-section-title" >About Me</h2>
       <p>
-        Hello Developers, I'm Mukesh — currently working as an Associate Software Engineer at <strong style={{ color: "orange" }}>Priacc Innovations pvt lmt</strong> during my training period.
-        I’ve strengthened my skills in <strong>Python</strong>, frameworks like <strong>Django</strong>, and GUI tools such as <strong>Tkinter</strong>, completing several hands-on projects.
+        I’m a 2024 Computer Science graduate with hands-on experience in Python, FastAPI, Django, and MongoDB. I’ve built REST APIs, real-time applications using WebSockets, and completed an internship at NRSC (ISRO).
+        I’m actively seeking entry-level <strong>Python or backend roles</strong>and would love to contribute to your team.
+        <strong style={{ color: "orange" }}> Please find my resume attached </strong>. I’d appreciate the opportunity to discuss further.
         I’m passionate about <strong>full-stack development, frontend engineering</strong>.
         Previously, I developed a fully functional, dynamic, and highly responsive <strong>eCommerce website</strong> — you can check it out in my <strong>Projects</strong> section.
       </p>
