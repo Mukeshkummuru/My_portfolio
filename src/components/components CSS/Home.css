@@ -2,10 +2,12 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: 40vw; /* Ensure it takes only 40% of the screen */
+    width: 40vw;
+    /* Ensure it takes only 40% of the screen */
     height: 100vh;
     display: flex;
-    align-items: center; /* Center content */
+    align-items: center;
+    /* Center content */
     justify-content: center;
     padding: 2rem;
     background: #0a192f;
@@ -22,16 +24,17 @@
 .image-wrapper {
     position: relative;
     display: inline-block;
+    right: 25%;
 }
 
 .profile-image {
-    width: 230px;
-    height: 230px;
+    width: 200px;
+    height: 260px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 8%;
     border: 2px solid transparent;
     background: linear-gradient(#0a192f, #0a192f) padding-box,
-                linear-gradient(135deg, #64ffda, #52d1b2) border-box;
+        linear-gradient(135deg, #64ffda, #52d1b2) border-box;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -50,8 +53,8 @@
     font-size: 1.1rem;
     margin-bottom: -1%;
     margin-top: 1%;
-    margin-right: 40%; 
-    
+    margin-right: 40%;
+
 }
 
 .role {
@@ -65,7 +68,7 @@
     line-height: 1.6;
 }
 
-.resume-container{
+.resume-container {
     text-align: center;
     font-size: 12px;
     margin-bottom: 6px;
@@ -73,7 +76,7 @@
     align-items: end;
 }
 
-.resume-viewer{
+.resume-viewer {
     display: none;
 }
 
@@ -103,39 +106,43 @@
 }
 
 .mobile-mockup-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #888 transparent;
-  max-height: 1100px; /* or whatever height fits your layout */
-  overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #888 transparent;
+    max-height: 1100px;
+    /* or whatever height fits your layout */
+    overflow-y: auto;
 }
 
 .mobile-mockup-wrapper::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
+
 .mobile-mockup-wrapper::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 4px;
+    background-color: #888;
+    border-radius: 4px;
 }
+
 .mobile-mockup-wrapper::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 .mobile-mockup-image {
-  width: 240px;
-  height: auto;
-  border-radius: 30px;
-  border: 2px solid #ff9f1c;
-  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
-  object-fit: cover;
-  box-shadow: 0 4px 16px rgba(255, 165, 0, 0.3);
-  transition: transform 0.3s ease;
+    width: 240px;
+    height: auto;
+    border-radius: 30px;
+    border: 2px solid #ff9f1c;
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    object-fit: cover;
+    box-shadow: 0 4px 16px rgba(255, 165, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
 .mobile-mockup-image:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }

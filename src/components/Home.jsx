@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import profileImage from '../assets/images/Mukesh_dp.jpg';
+import profileImage from "../assets/images/Mukesh_dp.png";
 import '../components/components CSS/Home.css';
- 
+
 
 const roles = [
   "Full Stack Developer",
   "Software Engineer",
   "Frontend Developer",
 ];
- 
+
 const Home = () => {
   const [currentRole, setCurrentRole] = useState(0);
   const [currentProject, setCurrentProject] = useState(null);
