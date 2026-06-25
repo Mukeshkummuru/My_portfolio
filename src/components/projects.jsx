@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaExternalLinkAlt, FaGithub, FaChevronDown } from 'react-icons/fa';
+import { fadeUp, staggerContainer, viewportOnce } from '../utils/motion';
 import './components CSS/Projects.css';
 import satellite1 from '../assets/images/output 7.png';
 import satellite2 from '../assets/images/output_8.png';
@@ -10,172 +13,175 @@ import image4 from '../assets/images/image4.jpg';
 import image5 from '../assets/images/image5.jpg';
 import image6 from '../assets/images/image6.jpg';
 
+const projects = [
+  {
+    id: 'gangs',
+    name: 'GANGS — E-commerce Platform',
+    stack: 'MERN Stack',
+    tags: ['React', 'Node.js', 'Express', 'MongoDB'],
+    links: [
+      { label: 'Live Site', href: 'https://gangsclothingbrand.vercel.app/', external: true },
+      { label: 'API', href: 'https://gangs-backend.onrender.com/', external: true },
+      { label: 'Source', href: 'https://github.com/Mukeshkummuru/Gangs-Brand-clothing', github: true },
+    ],
+    details: [
+      'Full eCommerce platform with React frontend and Express/Node backend for auth, products, and orders.',
+      'MongoDB for scalable data storage; JWT authentication; deployed on Vercel and Render.',
+      'Custom REST API built with modular routes and controllers, tested with Postman.',
+    ],
+  },
+  {
+    id: 'satellite',
+    name: 'Satellite ET Gap-Filling Algorithm',
+    stack: 'Python · Geospatial',
+    tags: ['Python', 'Rasterio', 'Dask', 'QGIS'],
+    details: [
+      'Optimized spatio-temporal gap-filling for large-scale satellite evapotranspiration data.',
+      'Processed multi-year TIFF datasets using Rasterio and Dask for parallel efficiency.',
+      'Generated high-resolution visualizations with Matplotlib and QGIS.',
+    ],
+    /* images: [satellite1, satellite2, satellite3], */
+  },
+  {
+    id: 'chitchat',
+    name: 'Chit Chat — Real-Time Chat App',
+    stack: 'Flutter · FastAPI',
+    tags: ['Flutter', 'FastAPI', 'MongoDB', 'WebSockets'],
+    links: [{ label: 'View App', href: 'https://chat-app-e11a5.web.app/download/', external: true }],
+    details: [
+      'Full-stack real-time chat with Flutter frontend and FastAPI backend.',
+      'JWT auth with OTP verification; WebSocket messaging with presence tracking.',
+      'Friend requests, Firebase Storage uploads, and custom push notifications.',
+    ],
+    images: [image1, image2, image3, image4, image5, image6],
+  },
+  {
+    id: 'moneyLedger',
+    name: 'Money Ledger — Finance Tracker',
+    stack: 'Django · React',
+    tags: ['Django', 'DRF', 'React', 'MySQL'],
+    links: [
+      {
+        label: 'Source',
+        href: 'https://github.com/Mukeshkummuru/moneyledger_django_project',
+        github: true,
+      },
+    ],
+    details: [
+      'Personal finance app with Django REST Framework backend and React frontend.',
+      'CRUD for transactions, summaries, and user data stored in MySQL.',
+      'Currently extending at Priacc Innovations as Associate Software Engineer.',
+    ],
+  },
+];
 
 const Projects = () => {
-  const [activeProject, setActiveProject] = useState(null);
+  const [activeId, setActiveId] = useState(null);
 
-  const toggleDetails = (project) => {
-    const newSelection = activeProject === project ? null : project;
-    setActiveProject(newSelection);
-
-    if (newSelection === 'chitchat') {
-      // Send images to right screen for Chit Chat
-      window.dispatchEvent(new CustomEvent('updateProjectPreview', {
-        detail: {
-          type: 'chitchat',
-          images: [
-            image1, image2, image3, image4, image5, image6
-          ]
-        }
-      }));
-    } else {
-      // Send plain string for other projects
-      window.dispatchEvent(new CustomEvent('updateProjectPreview', { detail: newSelection }));
-    }
-  };
+  const toggle = (id) => setActiveId((prev) => (prev === id ? null : id));
 
   return (
-    <section className="projects-section">
-      <h2 className="section-title">My Projects</h2>
-
-      {/* GANGS - E-commerce Website */}
-      <div className="project-card" onClick={() => toggleDetails('gangs')}>
-        <h3 className="project-name">GANGS - E-commerce Website</h3>
-        <p className="project-stack">Built with MERN Stack</p>
-        <p className="project-tools">Tools: React.js, Node.js, Express.js, MongoDB</p>
-        <div className="project-links-container">
-          <a href="https://gangsclothingbrand.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">
-            Visit Website
-          </a>
-          <a href="https://gangs-backend.onrender.com/" target="_blank" rel="noopener noreferrer" className="project-link">
-            Use my API
-          </a>
-        </div>
-        <a href="https://github.com/Mukeshkummuru/Gangs-Brand-clothing" target="_blank" rel="noopener noreferrer" className="project-link-source">
-          Source Code
-        </a>
-      </div>
-
-      {activeProject === 'gangs' && (
-        <div className="project-details">
-          <h3>How I Built GANGS</h3>
-          <p>
-            GANGS is a fully functional eCommerce platform built using the MERN stack.
-            The frontend is developed with React.js, featuring a component-based architecture
-            for a seamless user experience. The backend, powered by Express.js and Node.js,
-            handles authentication, product management, and order processing efficiently.
-          </p>
-          <br />
-          <p>
-            The database is managed using MongoDB, ensuring scalability and fast data retrieval.
-            The website is hosted on Vercel for the frontend and Render for the backend.
-          </p>
-          <br />
-          <p>
-            I created my own API for the GANGS eCommerce website using Node.js, Express.js, and MongoDB, following RESTful principles to handle products, user authentication, and orders. I structured the backend with modular routes and controllers, ensuring efficient data management and scalability. MongoDB was used for data storage, while JWT-based authentication secured the API. After testing with Postman, I deployed the backend on Render and connected it to my Vercel-hosted frontend, enabling seamless communication.
-          </p>
-        </div>
-      )}
-
-      {/* Spatio-Temporal Gap Filling Project */}
-      <div className="project-card" onClick={() => toggleDetails('satellite')}>
-        <h3 className="project-name">Spatio-Temporal Gap Filling of Satellite-Based Evapotranspiration Data</h3>
-        <p className="project-stack">Technologies: Python, Rasterio, Dask, Matplotlib</p>
-        <p className="project-tools">Skills: Python, NumPy, Pandas, QGIS</p>
-      </div>
-
-      {activeProject === 'satellite' && (
-        <div className="project-details">
-          <h3>Project Overview</h3>
-          <p>
-            Developed and optimized a <strong>spatio-temporal gap-filling algorithm</strong> for large-scale satellite-based
-            actual evapotranspiration (ET) data. The project involved processing high-resolution TIFF files,
-            handling data from Bhuvan, and utilizing advanced visualization techniques in QGIS and Matplotlib.
-          </p>
-          <p><strong>Key Features:</strong></p>
-          <ul>
-            <li>Used Rasterio and Dask for efficient processing of multi-year datasets.</li>
-            <li>Implemented data handling techniques for missing values in satellite imagery.</li>
-            <li>Generated high-resolution visualizations using Matplotlib and QGIS.</li>
-          </ul>
-
-          {/* Display Output Images */}
-          <div className="project-images">
-            <img src={satellite1} alt="Output 1" className="project-image" />
-            <img src={satellite2} alt="Output 2" className="project-image" />
-            <img src={satellite3} alt="Output 3" className="project-image" />
-          </div>
-        </div>
-      )}
-
-      {/* Chit Chat App */}
-      <div className="project-card" onClick={() => toggleDetails('chitchat')}>
-        <h3 className="project-name">Chit Chat – Real-Time Mobile Chat App</h3>
-        <p className="project-stack">Built with Flutter & FastAPI</p>
-        <p className="project-tools">Tools:  Flutter, Dart, FastAPI, Python, MongoDB, Firebase, WebSockets</p>
-        <a
-          href="https://chat-app-e11a5.web.app/download/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="apk"
+    <section id="projects" className="projects section-block">
+      <div className="container">
+        <motion.div
+          className="section-header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeUp}
         >
-          Click Here to view
-        </a>
+          <p className="section-label">Projects</p>
+          <h2 className="section-title">Selected work</h2>
+        </motion.div>
+
+        <motion.div
+          className="projects-list"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={staggerContainer}
+        >
+          {projects.map((project, index) => {
+            const isOpen = activeId === project.id;
+            return (
+              <motion.div key={project.id} className="project-item" variants={fadeUp}>
+                <button
+                  type="button"
+                  className={`project-row ${isOpen ? 'open' : ''}`}
+                  onClick={() => toggle(project.id)}
+                  aria-expanded={isOpen}
+                >
+                  <span className="project-index">0{index + 1}</span>
+                  <div className="project-info">
+                    <h3>{project.name}</h3>
+                    <p>{project.stack}</p>
+                  </div>
+                  <div className="project-tags">
+                    {project.tags.slice(0, 3).map((tag) => (
+                      <span key={tag} className="chip">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <motion.span
+                    className="project-chevron"
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <FaChevronDown />
+                  </motion.span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      className="project-panel"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <div className="project-panel-inner">
+                        <ul className="project-details-list">
+                          {project.details.map((line) => (
+                            <li key={line}>{line}</li>
+                          ))}
+                        </ul>
+
+                        {project.links && (
+                          <div className="project-links">
+                            {project.links.map((link) => (
+                              <a
+                                key={link.label}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="project-link-btn"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {link.github ? <FaGithub /> : <FaExternalLinkAlt />}
+                                {link.label}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+
+                        {project.images && (
+                          <div className={`project-gallery ${project.images.length > 3 ? 'scroll' : ''}`}>
+                            {project.images.map((src, i) => (
+                              <img key={i} src={src} alt={`${project.name} screenshot ${i + 1}`} />
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
-
-      {activeProject === 'chitchat' && (
-        <div className="project-details">
-          <p>
-            Role:  Mobile App Developer
-            <p>Developed a full-stack real-time chat app with modern UI/UX using Flutter frontend and FastAPI backend.</p>
-            <p>Implemented JWT-based secure authentication with OTP verification and password hashing.</p>
-            <p>Built REST APIs for user profiles, friend requests, chat history, and presence tracking.</p>
-            <p>Integrated WebSocket-based real-time messaging with online/offline status and unread message indicators.</p>
-            <p>Enabled profile management with image upload to Firebase Storage and enforced username change cooldown logic.</p>
-            <p>Implemented friend request system with pending/accepted states, and Custom notifications for new requests and messages.</p>
-          </p>
-        </div>
-      )}
-
-      <div className="project-card" onClick={() => toggleDetails('moneyLedger')}>
-        <h3 className="project-name">Money Ledger - Personal Finance Tracker</h3>
-        <p className="project-stack">Built with Django & React.js</p>
-        <p className="project-tools">Tools: Django, Django REST Framework, React.js, MySQL Workbench, Axios</p>
-        <a href="https://github.com/Mukeshkummuru/moneyledger_django_project" target="_blank" rel="noopener noreferrer" className="project-link-source">
-          Source Code
-        </a>
-      </div>
-
-      {activeProject === 'moneyLedger' && (
-        <div className="project-details">
-          <h3>How I Built Money Ledger</h3>
-          <p>
-            Money Ledger is a personal finance tracking application designed to manage money transactions efficiently.
-            I built the backend using Django and Django REST Framework, which provides a robust and scalable API for CRUD operations.
-            MySQL Workbench was used as the database to store transaction details, user information, and financial summaries.
-          </p>
-          <br />
-          <p>
-            The frontend is developed using React.js, offering a clean and interactive interface.
-            Users can add transactions (given or taken), view detailed lists, and see aggregated summaries like total given or received.
-            Axios is used for seamless communication between the React frontend and Django backend APIs.
-          </p>
-          <br />
-          <p>
-            The development process included designing the database schema, creating Django models and serializers,
-            implementing API endpoints with proper validations, and connecting themhe  to tReact frontend.
-            I implemented features like dynamic transaction addition, viewing historical transactions, and calculating totals.
-            Throughout the project, I focused on modular code structure, clean UI, and scalability for future enhancements.
-          </p>
-          <br />
-          <p>
-            Currently, I am working on this project as part of my training at <strong>Priacc Innovations</strong>
-            in my role as an Associate Software Engineer, gaining hands-on experience in full-stack development
-            and integrating frontend, backend, and database efficiently.
-          </p>
-        </div>
-      )}
-
     </section>
   );
 };

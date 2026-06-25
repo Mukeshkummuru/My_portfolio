@@ -1,95 +1,106 @@
-import React, { useEffect, useState } from 'react';
-import profileImage from "../assets/images/Mukesh_dp.png";
-import '../components/components CSS/Home.css';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
+import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
+import profileImage from '../assets/images/Mukesh_dp.png';
+import { fadeUp, staggerContainer, viewportOnce } from '../utils/motion';
+import './components CSS/Home.css';
 
-
-const roles = [
-  "Full Stack Developer",
-  "Software Engineer",
-  "Frontend Developer",
-];
+const roles = ['Full Stack Developer', 'Software Engineer', 'Backend Developer'];
 
 const Home = () => {
-  const [currentRole, setCurrentRole] = useState(0);
-  const [currentProject, setCurrentProject] = useState(null);
-  const [previewImages, setPreviewImages] = useState([]);
+  const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 2000);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2800);
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const handler = (e) => {
-      const detail = e.detail;
-
-      if (typeof detail === 'string') {
-        // Received just a string (e.g. 'gangs', 'satellite') – reset preview images
-        setCurrentProject(detail);
-        setPreviewImages([]);
-      } else if (detail?.type === 'chitchat') {
-        // Received Chit Chat project with image list
-        setCurrentProject(detail.type);
-        setPreviewImages(detail.images);
-      } else {
-        setCurrentProject(null);
-        setPreviewImages([]);
-      }
-    };
-
-    window.addEventListener('updateProjectPreview', handler);
-    return () => window.removeEventListener('updateProjectPreview', handler);
-  }, []);
-
-  useEffect(() => {
-    const wrapper = document.querySelector('.mobile-mockup-wrapper');
-    if (wrapper) wrapper.scrollLeft = 0;
-  }, [currentProject]);
-
   return (
-    <section id="home" className="home-section">
-      <div className="home-content">
-        <div className="image-wrapper">
-          <img src={profileImage} alt="Profile" className="profile-image" />
-        </div>
+    <section id="home" className="hero section-block">
+      <div className="hero-glow" aria-hidden="true" />
+      <div className="container hero-grid">
+        <motion.div
+          className="hero-content"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.p className="hero-greeting" variants={fadeUp}>
+            Hello fellas, I&apos;m
+          </motion.p>
 
-        <div className="text-wrapper">
-          <h4 className="subtitle">Hi, fellas This is ↓</h4>
-          <h1 className="title">K. Sai Mukesh</h1>
+          <motion.h1 className="hero-name" variants={fadeUp}>
+            K. Sai Mukesh
+          </motion.h1>
 
-          <div className="resume-container">
-            <iframe src="/my_resume/Mukesh_resume.pdf" className="resume-viewer"></iframe>
-            <a href="/my_resume/Mukesh_resume.pdf" download className="resume-download-btn">
+          <motion.div className="hero-role-wrap" variants={fadeUp}>
+            <span className="hero-role-label">I build as a</span>
+            <motion.span
+              key={roleIndex}
+              className="hero-role"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.4 }}
+            >
+              {roles[roleIndex]}
+            </motion.span>
+          </motion.div>
+
+          <motion.p className="hero-bio" variants={fadeUp}>
+            I craft scalable web applications, REST APIs, and real-time systems with
+            clean architecture and thoughtful user experiences.
+          </motion.p>
+
+          <motion.div className="hero-actions" variants={fadeUp}>
+            <Link to="projects" smooth duration={600} offset={-72} className="btn btn-primary">
+              View Projects
+            </Link>
+            <a href="/my_resume/Mukesh_resume.pdf" download className="btn btn-outline">
               Download Resume
             </a>
+          </motion.div>
+
+          <motion.div className="hero-social" variants={fadeUp}>
+            <a href="https://github.com/Mukeshkummuru" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mukesh-kummuru-b25b6429b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="hero-image-frame">
+            <img src={profileImage} alt="K. Sai Mukesh" className="hero-image" />
           </div>
-
-          <h2 className="role">
-            <span className="role-text">{roles[currentRole]}</span>
-          </h2>
-
-          <p className="description">
-            I'm a passionate developer who creates user-friendly and engaging digital experiences,
-            focusing on accessibility and innovation.
-          </p>
-        </div>
-
-        {/* Mobile Preview Section */}
-        {previewImages.length > 0 && (
-          <div className="mobile-mockup-wrapper">
-            {previewImages.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt={`mockup-${i}`}
-                className="mobile-mockup-image"
-              />
-            ))}
-          </div>
-        )}
+        </motion.div>
       </div>
+
+      <motion.div
+        className="hero-scroll"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+      >
+        <Link to="about" smooth duration={600} offset={-72} className="hero-scroll-link">
+          <FaArrowDown />
+        </Link>
+      </motion.div>
     </section>
   );
 };

@@ -1,68 +1,51 @@
-import React from 'react';
-import './components CSS/Experience.css';
+import { motion } from 'framer-motion';
+import { fadeUp, staggerContainer, viewportOnce } from '../utils/motion';
+import './components CSS/Skills.css';
+
+const skillGroups = [
+  { title: 'Programming Languages & Concepts', skills: ['Python', 'JavaScript', 'SQL', 'HTML', 'CSS', 'Object-Oriented Programming (OOP)'] },
+  { title: 'Frameworks', skills: ['Django', 'FastAPI', 'React.js', 'Express.js'] },
+  { title: 'Databases', skills: ['MongoDB', 'MySQL'] },
+  { title: 'APIs & Protocols', skills: ['RESTful APIs', 'WebSockets', 'JWT'] },
+  { title: 'Developer Tools', skills: ['Git', 'GitHub', 'Postman', 'Firebase', 'Docker', 'CI/CD Pipelines'] },
+  { title: 'Software Engineering & ML', skills: ['SDLC', 'Agile Methodologies', 'Scikit-learn', 'Pandas', 'NumPy', 'Linear Regression', 'Random Forest', 'MAE', 'RMSE'] },
+];
 
 const Skills = () => {
   return (
-    <section className="skills-section">
-      <h2 className="exp-section-title">Technical Skills</h2>
+    <section id="skills" className="skills section-block">
+      <div className="container">
+        <motion.div
+          className="section-header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeUp}
+        >
+          <p className="section-label">Skills</p>
+          <h2 className="section-title">Tech I work with</h2>
+        </motion.div>
 
-      <div className="skills-container">
-        <div className="skill-box">
-          <h3>Frontend</h3>
-          <ul>
-            <li>React.js</li>
-            <li>HTML & CSS</li>
-            <li>JavaScript</li>
-            <li>Flutter</li>
-            <li>Dart</li>
-          </ul>
-        </div>
-
-        <div className="skill-box">
-          <h3>Backend</h3>
-          <ul>
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>REST Api Development</li>
-            <li>FAST Api</li>
-            <li>Django</li>
-          </ul>
-        </div>
-
-        <div className="skill-box">
-          <h3>Database</h3>
-          <ul>
-            <li>MongoDB</li>
-            <li>SQL</li>
-            <li>Firebase</li>
-          </ul>
-        </div>
-
-        <div className="skill-box">
-          <h3>Data Science & AI</h3>
-          <ul>
-            <li>Python</li>
-            <li>Power BI</li>
-            <li>Machine Learning</li>
-          </ul>
-        </div>
-
-        <div className="skill-box">
-          <h3>Data Science & Geospatial</h3>
-          <ul>
-            <li>Python</li>
-            <li>Data Visualization (Power BI)</li>
-            <li>QGIS & Geospatial Analysis</li>
-          </ul>
-        </div>
-
-        <div className="skill-box">
-          <h3>Programming</h3>
-          <ul>
-            <li>Python</li>
-            <li>DSA(Basics)</li>
-          </ul>
-        </div>
+        <motion.div
+          className="skills-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={staggerContainer}
+        >
+          {skillGroups.map((group) => (
+            <motion.div key={group.title} className="skill-group" variants={fadeUp}>
+              <h3>{group.title}</h3>
+              <div className="skill-chips">
+                {group.skills.map((skill) => (
+                  <span key={skill} className="chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
