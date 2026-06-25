@@ -81,6 +81,10 @@ ul {
   scroll-margin-top: var(--nav-height);
 }
 
+.section-block:not(.hero) {
+  padding-block: 1.95rem;
+}
+
 .section-header {
   margin-bottom: 3rem;
 }
