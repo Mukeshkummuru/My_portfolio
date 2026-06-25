@@ -51,8 +51,7 @@ const Home = () => {
           </motion.div>
 
           <motion.p className="hero-bio" variants={fadeUp}>
-            I craft scalable web applications, REST APIs, and real-time systems with
-            clean architecture and thoughtful user experiences.
+            I craft scalable web applications, REST APIs, and real-time systems with clean architecture, modern technologies, and thoughtful user experiences that solve real-world problems.
           </motion.p>
 
           <motion.div className="hero-actions" variants={fadeUp}>

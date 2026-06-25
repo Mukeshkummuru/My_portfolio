@@ -9,7 +9,7 @@ const education = [
   { degree: 'SSC', school: 'Ravindra Bharathi School', period: '2018', score: 'GPA 9.0' },
 ];
 
-const interests = ['Web Development', 'Full Stack Engineering', 'API Design', 'Photography'];
+const interests = ['Web Development', 'Full Stack developement', 'API Design', 'Photography', 'Video Editing', 'Content Creation'];
 
 const About = () => {
   return (
@@ -36,19 +36,36 @@ const About = () => {
           >
             <motion.p variants={fadeUp}>
               I&apos;m a 2024 Computer Science graduate with hands-on experience in Python, FastAPI,
-              Django, and MongoDB. I&apos;ve built REST APIs, real-time applications using WebSockets,
-              and completed an internship at NRSC (ISRO).
+              Django, React.js, MongoDB, and MySQL. I enjoy building scalable backend systems,
+              REST APIs, and full-stack web applications with a focus on clean, efficient code.
             </motion.p>
+
             <motion.p variants={fadeUp}>
-              I&apos;m actively seeking entry-level <strong>Python or backend roles</strong> and would
-              love to contribute to your team.{' '}
-              <span className="highlight-text">Please find my resume attached</span> — I&apos;d appreciate
-              the opportunity to discuss further.
+              During my internship at <strong>NRSC (ISRO)</strong>, I worked on a satellite data
+              processing project using Python, Pandas, NumPy, Rasterio, and Dask, gaining practical
+              experience in handling large datasets and optimizing application performance.
             </motion.p>
+
             <motion.p variants={fadeUp}>
-              I&apos;m passionate about <strong>full-stack development</strong> and previously built a
-              fully functional, responsive <strong>eCommerce website</strong> — check it out in my Projects
-              section.
+              I&apos;ve built several real-world projects, including a <strong>real-time chat application</strong>
+              with FastAPI, WebSockets, MongoDB, and Firebase Authentication, a
+              <strong> personal finance management system</strong>, and a
+              <strong> responsive MERN eCommerce platform</strong> featuring authentication,
+              product management, shopping cart, and secure APIs.
+            </motion.p>
+
+            <motion.p variants={fadeUp}>
+              I&apos;m actively seeking entry-level <strong>Python Backend</strong> or
+              <strong> Full-Stack Developer</strong> opportunities where I can contribute,
+              keep learning, and grow as a software engineer.
+              <span className="highlight-text"> Please find my resume attached</span> — I&apos;d
+              appreciate the opportunity to connect and discuss how I can contribute to your team.
+            </motion.p>
+
+            <motion.p variants={fadeUp}>
+              I&apos;m passionate about building practical software that solves real problems.
+              Feel free to explore my <strong>Projects</strong> section to see my work, source code,
+              and live demos.
             </motion.p>
 
             <motion.div className="about-social" variants={fadeUp}>

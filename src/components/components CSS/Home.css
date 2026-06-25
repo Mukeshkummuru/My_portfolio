@@ -1,11 +1,16 @@
 .hero {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
-  padding-top: var(--nav-height);
+  padding-top: calc(var(--nav-height) + 8rem);
+  padding-bottom: 1rem;
   scroll-margin-top: 0;
   overflow: hidden;
+}
+
+.hero-content {
+  padding-top: 2rem;
 }
 
 .hero-glow {
@@ -22,11 +27,13 @@
 }
 
 @keyframes pulse-glow {
+
   0%,
   100% {
     opacity: 0.6;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.05);
@@ -186,10 +193,12 @@
 }
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(6px);
   }
