@@ -68,7 +68,7 @@ const About = () => {
             viewport={viewportOnce}
             variants={staggerContainer}
           >
-            <motion.div className="info-card" variants={fadeUp}>
+            <motion.div className="info-card education-card" variants={fadeUp}>
               <h3>Education</h3>
               <ul className="info-list">
                 {education.map((item) => (

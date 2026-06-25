@@ -63,6 +63,11 @@
   transition: border-color var(--transition), transform var(--transition);
 }
 
+.education-card {
+  padding-top: 0.9rem;
+  /* margin-top: -20%; */
+}
+
 .info-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-3px);
