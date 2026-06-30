@@ -47,19 +47,11 @@ const About = () => {
             </motion.p>
 
             <motion.p variants={fadeUp}>
-              I&apos;ve built several real-world projects, including a <strong>real-time chat application</strong>
-              with FastAPI, WebSockets, MongoDB, and Firebase Authentication, a
-              <strong> personal finance management system</strong>, and a
-              <strong> responsive MERN eCommerce platform</strong> featuring authentication,
-              product management, shopping cart, and secure APIs.
+              I&apos;ve built several real-world projects, including a <strong>real-time chat application</strong> with FastAPI, WebSockets, MongoDB, and Firebase Authentication, a <strong>personal finance management system</strong>, and a <strong>responsive MERN eCommerce platform</strong> featuring authentication, product management, shopping cart, and secure APIs.
             </motion.p>
 
             <motion.p variants={fadeUp}>
-              I&apos;m actively seeking entry-level <strong>Python Backend</strong> or
-              <strong> Full-Stack Developer</strong> opportunities where I can contribute,
-              keep learning, and grow as a software engineer.
-              <span className="highlight-text"> Please find my resume attached</span> — I&apos;d
-              appreciate the opportunity to connect and discuss how I can contribute to your team.
+              I&apos;m actively seeking entry-level <strong>Python Backend</strong> or <strong>Full-Stack Developer</strong> opportunities where I can contribute, keep learning, and grow as a software engineer. <span className="highlight-text">Please find my resume attached</span> — I&apos;d appreciate the opportunity to connect and discuss how I can contribute to your team.
             </motion.p>
 
             <motion.p variants={fadeUp}>

@@ -88,16 +88,30 @@
 }
 
 @media (max-width: 768px) {
+  .site-nav {
+    height: auto;
+    min-height: var(--nav-height);
+    padding-block: 0.95rem;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+
   .nav-inner {
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 0.75rem;
   }
 
   .nav-links {
-    order: 3;
+    order: 1;
     width: 100%;
+    display: flex;
+    align-items: center;
     overflow-x: auto;
-    padding-bottom: 0.25rem;
+    padding: 0.25rem 0 0.15rem;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -107,7 +121,9 @@
   }
 
   .nav-links ul {
-    gap: 0.15rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     width: max-content;
   }
 
@@ -115,6 +131,12 @@
     font-size: 0.78rem;
     padding: 0.4rem 0.7rem;
     white-space: nowrap;
+    min-width: fit-content;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
   }
 
   .nav-index {
