@@ -12,16 +12,30 @@ const navItems = [
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isHomeSection, setIsHomeSection] = useState(true);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const aboutSection = document.getElementById('about');
+
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 24);
+
+      if (aboutSection) {
+        const homeEnd = aboutSection.offsetTop - 96;
+        setIsHomeSection(scrollY < homeEnd);
+      }
+    };
+
     window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
     <motion.header
-      className={`site-nav ${scrolled ? 'scrolled' : ''}`}
+      className={`site-nav ${scrolled ? 'scrolled' : ''} ${isHomeSection ? 'home-section' : ''}`}
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
