@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
 import profileImage from '../assets/images/Mukesh_dp.png';
+import desktopProfileImage from '../assets/images/dp_image2.png';
 import { fadeUp, staggerContainer, viewportOnce } from '../utils/motion';
 import './components CSS/Home.css';
 
@@ -17,6 +18,15 @@ const Home = () => {
     }, 2800);
     return () => clearInterval(interval);
   }, []);
+
+  const scrollToAbout = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const el = document.getElementById('about');
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="home" className="hero section-block">
@@ -77,18 +87,27 @@ const Home = () => {
             </a>
           </motion.div>
         </motion.div>
-
-        <motion.div
-          className="hero-visual"
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="hero-image-frame">
-            <img src={profileImage} alt="K. Sai Mukesh" className="hero-image" />
-          </div>
-        </motion.div>
       </div>
+
+      <motion.div
+        className="hero-visual"
+        initial={{ opacity: 0, scale: 0.92 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="hero-image-frame">
+          <img
+            src={desktopProfileImage}
+            alt="K. Sai Mukesh"
+            className="hero-image hero-image-desktop"
+          />
+          <img
+            src={profileImage}
+            alt="K. Sai Mukesh"
+            className="hero-image hero-image-mobile"
+          />
+        </div>
+      </motion.div>
 
       <motion.div
         className="hero-scroll"
@@ -96,9 +115,9 @@ const Home = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.6 }}
       >
-        <Link to="about" smooth duration={600} offset={-72} className="hero-scroll-link">
+        <a href="#about" onClick={scrollToAbout} className="hero-scroll-link" aria-label="Scroll to about">
           <FaArrowDown />
-        </Link>
+        </a>
       </motion.div>
     </section>
   );

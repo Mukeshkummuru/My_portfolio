@@ -133,9 +133,13 @@
 
 .hero-image-frame {
   position: relative;
+  width: min(320px, 100%);
+  max-width: 480px;
+  aspect-ratio: 4 / 5;
   padding: 4px;
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, var(--accent), transparent 60%);
+  overflow: hidden;
 }
 
 .hero-image-frame::before {
@@ -154,16 +158,94 @@
 }
 
 .hero-image {
-  width: min(280px, 100%);
-  aspect-ratio: 4 / 5;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: calc(var(--radius-lg) - 4px);
   border: 2px solid var(--bg);
   transition: transform var(--transition);
 }
 
+.hero-image-desktop {
+  display: none;
+}
+
+.hero-image-mobile {
+  display: block;
+}
+
 .hero-visual:hover .hero-image {
   transform: scale(1.02);
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -3%;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  /* reduce top spacing for the left text block so it moves up */
+  .hero-content {
+    padding-top: calc(var(--nav-height) + 1rem);
+    max-width: 460px;
+    z-index: 2;
+  }
+
+  /* make the visual panel larger on desktop and span full hero height */
+  .hero-visual {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 75vw;
+    /* increased from 70vw */
+    max-width: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-image-frame {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    border: none;
+    transition: none;
+  }
+
+  .hero-image-desktop {
+    display: block;
+  }
+
+  .hero-image-mobile {
+    display: none;
+  }
+
+  .hero-image-frame::before {
+    display: none;
+  }
+
+  .hero-visual:hover .hero-image {
+    transform: none;
+  }
 }
 
 .hero-scroll {
@@ -171,6 +253,7 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 9999;
 }
 
 .hero-scroll-link {
@@ -205,18 +288,42 @@
 }
 
 @media (max-width: 900px) {
+
+  /* Stack the hero section vertically and place the visual above content */
   .hero {
     padding-top: calc(var(--nav-height) + 5.5rem);
-  }
-
-  .hero-visual {
-    margin-top: 1.9rem;
-    margin-bottom: -8%;
+    padding-bottom: 2.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .hero-visual {
+    /* appear above the container by using flex order */
+    order: -1;
+    position: static;
+    margin: 0 auto 1rem auto;
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    overflow: visible;
+    z-index: 0;
+  }
+
+  .hero-content {
+    order: 0;
+    padding-top: 0.75rem;
+    max-width: 640px;
+    margin: 0 auto;
+    display: block;
   }
 
   .hero-bio {
@@ -232,12 +339,36 @@
     justify-content: center;
   }
 
-  .hero-visual {
-    order: -1;
+  .hero-image-frame {
+    position: relative;
+    width: min(280px, 70%);
+    max-width: 360px;
+    aspect-ratio: 4 / 5;
+    padding: 6px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--accent), transparent 60%);
+    overflow: hidden;
+    margin: 8% auto;
+    margin-bottom: 5%;
   }
 
   .hero-image {
-    width: 240px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: calc(var(--radius-lg) - 4px);
+    border: 2px solid var(--bg);
+    transition: transform var(--transition);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .hero-image-desktop {
+    display: none;
+  }
+
+  .hero-image-mobile {
+    display: block;
   }
 
   .hero-scroll {
