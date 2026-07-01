@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
 import profileImage from '../assets/images/Mukesh_dp.png';
-import desktopProfileImage from '../assets/images/dp_image2.png';
+import desktopProfileImageBW from '../assets/images/dp_image3.png';
+import desktopProfileImageColor from '../assets/images/dp_image2.png';
 import { fadeUp, staggerContainer, viewportOnce } from '../utils/motion';
 import './components CSS/Home.css';
 
@@ -95,11 +96,16 @@ const Home = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="hero-image-frame">
+        <div className="hero-image-frame hero-image-hover">
           <img
-            src={desktopProfileImage}
+            src={desktopProfileImageBW}
             alt="K. Sai Mukesh"
-            className="hero-image hero-image-desktop"
+            className="hero-image hero-image-desktop hero-image-bw"
+          />
+          <img
+            src={desktopProfileImageColor}
+            alt="K. Sai Mukesh color"
+            className="hero-image hero-image-desktop hero-image-color"
           />
           <img
             src={profileImage}

@@ -126,6 +126,7 @@ ul {
   text-decoration: none;
   cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
+  pointer-events: auto;
 }
 
 .btn-primary {
